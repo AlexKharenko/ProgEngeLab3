@@ -1,0 +1,16 @@
+﻿  func.cpp
+  ProgEngeLab3.cpp
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(10,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(14,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(17,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(22,23): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(39,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(43,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(58,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(61,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(74,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(77,35): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(90,27): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(93,35): warning C4018: <: несоответствие типов со знаком и без знака
+  Создание кода...
+  ProgEngeLab3.vcxproj -> C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\Debug\ProgEngeLab3.exe
