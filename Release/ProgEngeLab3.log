@@ -1,9 +1,7 @@
 ﻿  ProgEngeLab3.cpp
-C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(140,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(144,23): warning C4018: <: несоответствие типов со знаком и без знака
-C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(159,22): warning C4244: аргумент: преобразование "double" в "int", возможна потеря данных
+C:\Users\Семья\Desktop\Alexey\Учёба\GitHub\ProgEngeLab3\ProgEngeLab3.cpp(149,18): warning C4018: <: несоответствие типов со знаком и без знака
   Создание кода
-  1 of 20 functions ( 5.0%) were compiled, the rest were copied from previous compilation.
+  1 of 24 functions ( 4.2%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Создание кода завершено

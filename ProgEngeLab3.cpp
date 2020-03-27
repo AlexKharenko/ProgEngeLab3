@@ -21,6 +21,7 @@ public:
     char back();
     int size();
     bool isEmpty();
+    void output();
 };
 bool stack::push(char item)
 {
@@ -53,6 +54,13 @@ int stack::size()
 {
     return top+1;
 }
+void stack::output() {
+    for (int i = 0; i < size(); i++)
+    {
+        cout << myStack[i] << " ";
+    }
+    cout << endl;
+}
 bool stack::isEmpty()
 {
     return (top < 0);
@@ -64,13 +72,13 @@ class queue
     int rear;		
 
 public:
-    int arr[MAX];
+    char arr[MAX];
     queue() {
         front = 0;
         rear = 0;
     }
     void pop();
-    bool push(int x);
+    bool push(char x);
     int type_front();
     int size();
     bool isEmpty();
@@ -87,7 +95,7 @@ void queue::pop()
     cout << "Removing " << arr[front] << '\n';
     front++;
 }
-bool queue::push(int item)
+bool queue::push(char item)
 {
     if (isFull())
     {
@@ -131,36 +139,51 @@ void queue::output() {
     }
     cout << endl;
 }
+
 int main(int argc, char* argv[]) {
-
-    char* x = argv[1];
-    int count1 = 1;
-    int count2 = 0;
+    queue out;
     stack oper;
-    for (int i = 0; i < strlen(argv[1]); i++)
-        if ((char)argv[1][i] == '+' || (char)argv[1][i] == '-' || (char)argv[1][i] == '*' || (char)argv[1][i] == '/') {
-            oper.push(argv[1][i]);
+    for (int j = 1; j < argc; ++j)
+    {
+        int i = 0;
+        while (i < strlen(argv[j])) {
+            char s = oper.back();
+            if ((char)argv[j][i] == ' ') {
+                continue;
+            }
+            if ((char)argv[j][i] >= '0' && (char)argv[j][i] <= '9') {
+                out.push(argv[j][i]);
+                i++;
+                continue;
+            }
+            if ((char)argv[j][i] == '+' || (char)argv[j][i] == '-') {
+                oper.push(argv[j][i]);
+                i++;
+                continue;
+            }
+            if ((char)argv[j][i] == '*' || (char)argv[j][i] == '/' && s == '+' || s == '-') {
+                oper.push(argv[j][i]);
+                i++;
+                continue;
+            }
+            if ((char)argv[j][i] == '*' || (char)argv[j][i] == '/' && s == '*' || s == '/') {
+                int l = oper.pop();
+                out.push(l);
+                oper.push(argv[j][i]);
+                i++;
+                continue;
+            }
+            else {
+                continue;
+            }
         }
-    for (int i = 0; i < strlen(argv[1]); i++) {
-        if (x[i] >= '0' && x[i] <= '9')
-            continue;
-        else count1++;
+        i = 0;
     }
-    double* z = new double[count1];
-    int k = 0;
-    int n = strlen(x);
-    for (int i = 0; i < n; i++) {
-        if (x[i] >= '0' && x[i] <= '9')
-            z[k] = z[k] * 10 + x[i] - '0';
-        else k++;
+    for (int i = 0; i =oper.size() ; i++) {
+            int l = oper.pop();
+            out.push(l);
     }
-    queue numb;
-    for (int i = 0; i < count1; i++) {
-        numb.push(z[i]);
-    }
-    numb.output();
-
-
-
+    out.output();
+    
 	return 0;
 }
