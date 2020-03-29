@@ -143,6 +143,7 @@ void queue::output() {
 int main(int argc, char* argv[]) {
     queue out;
     stack oper;
+	int counter = 0;
     for (int j = 1; j < argc; ++j)
     {
         int i = 0;
@@ -159,11 +160,13 @@ int main(int argc, char* argv[]) {
             if ((char)argv[j][i] == '+' || (char)argv[j][i] == '-') {
                 oper.push(argv[j][i]);
                 i++;
+				counter++;
                 continue;
             }
             if ((char)argv[j][i] == '*' || (char)argv[j][i] == '/' && s == '+' || s == '-') {
                 oper.push(argv[j][i]);
                 i++;
+				counter++;
                 continue;
             }
             if ((char)argv[j][i] == '*' || (char)argv[j][i] == '/' && s == '*' || s == '/') {
@@ -171,6 +174,7 @@ int main(int argc, char* argv[]) {
                 out.push(l);
                 oper.push(argv[j][i]);
                 i++;
+				counter++;
                 continue;
             }
             else {
@@ -183,7 +187,66 @@ int main(int argc, char* argv[]) {
             int l = oper.pop();
             out.push(l);
     }
+	cout << "counter" << counter << endl;
     out.output();
-    
+	int result = 0;
+	int change = 0;
+	int change2 = 0;
+	for (int l = counter; counter >= 1;counter--) {
+		for (int i = 0; i < out.size() ; i++) {
+			if (out.arr[i] == '*') {
+				change = out.arr[i - 1] - '0';
+				change2 = out.arr[i - 2] - '0';
+				result = change * change2;
+				for (int j = i; j < out.size() - 1; j++) {
+					out.arr[j] = out.arr[j + 1];
+					out.arr[j + 1] = '0';
+				}
+				for (int k = i; k < out.size()-1 ; k++) {
+					out.arr[k - 1] = out.arr[k - 2];
+					out.arr[k - 2] = 0;
+					out.arr[k - 1] = result;
+				}
+				out.arr[i - 2] = 0;
+				i--;
+			}
+			if (out.arr[i] == '-') {
+				change = out.arr[i - 2] - '0';
+				change2 = out.arr[i - 1] - '0';
+				result = change - change2;
+				for (int j = i; j < out.size() - 1; j++) {
+					out.arr[j] = out.arr[j + 1];
+					out.arr[j + 1] = '0';
+				}
+				for (int k = i; k < out.size()-1 ; k++) {
+					out.arr[k - 1] = out.arr[k - 2];
+					out.arr[k - 2] = 0;
+					out.arr[k - 1] = result;
+				}
+				out.arr[i - 2] = '0';
+				i--;
+			}
+			if (out.arr[i] == '+') {
+				change = out.arr[i - 1] - '0';
+				change2 = out.arr[i - 2] - '0';
+				result = change + change2;
+				for (int j = i; j < out.size() - 1; j++) {
+					out.arr[j] = out.arr[j + 1];
+					out.arr[j + 1] = '0';
+				}
+				for (int k = i; k < out.size()-1 ; k++) {
+					out.arr[k - 2] = out.arr[k - 1];
+					out.arr[k - 1] = 0;
+					out.arr[k - 2] = result;
+				}
+				out.arr[i - 2] = '0';
+				i--;
+				
+				cout << "Result:" << result << endl;
+			}
+		}
+		cout << "counter - " << counter << endl;
+	}
+	cout<<"Result:"<<result<<endl;
 	return 0;
 }
